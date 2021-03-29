@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Mosam</string>
+    <string name="current_temprature">25</string>
+    <string name="Day_monday">MON</string>
+    <string name="max_temp_second">20</string>
+    <string name="min_temp_second">15</string>
+    <string name="humidity_percent">21%</string>
+    <string name="rain_mm">0 mm</string>
+    <string name="wind_kmperh">11.1 km/h</string>
+    <string name="today_day">MONDAY , MARCH 29</string>
+    <string name="temp_time"> 4:00</string>
+    <string name="temp_time_temp">37</string>
+    <string name="temp_time_percent">0%</string>
+    <string name="temp_time_wind">5.6 km/h</string>
 </resources>
