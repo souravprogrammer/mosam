@@ -4,9 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1769aa"
+    android:id="@+id/parent"
     tools:context=".MainActivity">
 
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView_view"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -25,10 +39,11 @@
             <include layout="@layout/button_layout" />
 
             <include layout="@layout/temp_hour_day_layout" />
-
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+
 
 
 </FrameLayout>

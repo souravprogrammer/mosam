@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <array name="Temp_list">
+        <item>@string/kelvin</item>
+        <item>@string/fahrenheit</item>
+        <item>@string/CELSIUS</item>
+    </array>
+    <array name="Temp_list_values">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </array>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory
+        android:title="@string/title_location"
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/defalult_place"
+        android:key="@string/LOCATION_KEY"
+        android:singleLine="true"
+        android:summary="@string/defalult_place"
+        android:title="City Name" />
+
+    <ListPreference
+        android:entries="@array/Temp_list"
+        android:entryValues="@array/Temp_list"
+        android:key="tempUnit"
+        android:summary="@string/CELSIUS"
+        android:title="@string/temprature" />
+</PreferenceScreen>

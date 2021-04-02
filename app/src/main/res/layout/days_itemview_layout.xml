@@ -1,59 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:padding="8dp"
-    android:orientation="horizontal">
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/day_text"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Day_monday"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:padding="8dp">
 
-    <ImageView
+        <com.google.android.material.textview.MaterialTextView
+            android:textColor="@color/white"
+            android:id="@+id/day_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Day_monday"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        android:id="@+id/weather_image_status_second"
-        android:layout_width="0dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_wind"
-        app:layout_constraintEnd_toEndOf="@+id/day_text"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/day_text"
-        app:layout_constraintTop_toBottomOf="@+id/day_text" />
+        <ImageView
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/max_temp_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/max_temp_second"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/day_text"
-        app:layout_constraintStart_toStartOf="@+id/day_text"
-        app:layout_constraintTop_toBottomOf="@+id/weather_image_status_second" />
+            android:id="@+id/weather_image_status_second"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_wind"
+            app:layout_constraintEnd_toEndOf="@+id/day_text"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/day_text"
+            app:layout_constraintTop_toBottomOf="@+id/day_text" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/min_temp_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/min_temp_second"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/day_text"
-        app:layout_constraintStart_toStartOf="@+id/day_text"
-        app:layout_constraintTop_toBottomOf="@+id/max_temp_second" />
+        <com.google.android.material.textview.MaterialTextView
+            android:textColor="@color/white"
+            android:id="@+id/max_temp_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/max_temp_second"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/day_text"
+            app:layout_constraintStart_toStartOf="@+id/day_text"
+            app:layout_constraintTop_toBottomOf="@+id/weather_image_status_second" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:textColor="@color/dull_white"
+            android:id="@+id/min_temp_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/min_temp_second"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/day_text"
+            app:layout_constraintStart_toStartOf="@+id/day_text"
+            app:layout_constraintTop_toBottomOf="@+id/max_temp_second" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

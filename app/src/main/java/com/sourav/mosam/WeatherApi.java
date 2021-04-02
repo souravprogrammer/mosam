@@ -16,9 +16,10 @@ public class WeatherApi {
     private static final String CURRENT_API = "https://api.openweathermap.org/data/2.5/weather?q=NAME&appid=" + API_KEY;
     private static final String ONE_CALL_API = "https://api.openweathermap.org/data/2.5/onecall?lat=LATI&lon=LONGI&exclude=minutely&appid=" + API_KEY;
 
-    private WeatherObject currentWeather;
-    private static String Latitude;
-    private static String LONGITUDE;
+    private static WeatherObject currentWeather;
+    private static String Latitude = null;
+    private static String LONGITUDE = null;
+    private static String Raw = null;
 
     static public void setLocation(String CITY_NAME) {
         city_name = CITY_NAME;
@@ -26,17 +27,21 @@ public class WeatherApi {
         String Required_SEARCH_API = CURRENT_API.replace("NAME", city_name);
         ReadApi api = new ReadApi(Required_SEARCH_API);
         String result_raw = api.getData();
+        if (result_raw.equals("No data")) {
+            return;
+        }
         JsonConveter.Setcoardinates(result_raw); // this will returns the cordinates of the location
-
+        currentWeather = JsonConveter.getcurrent(result_raw);
         Latitude = JsonConveter.getCordinates().getLatitude();
         LONGITUDE = JsonConveter.getCordinates().getLongitude();
     }
 
-//    static public WeatherObject getCurrentWeather() {
-//
-//    }
+    static public WeatherObject getCurrentWeather() {
+        return currentWeather;
+    }
 
     public static ArrayList<WeatherObject> getOneCallApiData() {
+        ArrayList<WeatherObject> list = new ArrayList<WeatherObject>();
         if (Latitude == null && LONGITUDE == null) {
             return null;
         }
@@ -44,9 +49,28 @@ public class WeatherApi {
         String Request = ONE_CALL_API.replace("LATI", Latitude).replace("LONGI", LONGITUDE);
 
         ReadApi api = new ReadApi(Request);
-        String Raw_data = api.getData();
-        ArrayList<WeatherObject> list = JsonConveter.getall(Raw_data);
+        Raw = api.getData();
+
+        list.addAll(JsonConveter.getall(Raw));
+        if (list.size() == 0) {
+            return null;
+        }
+      //  list.remove(list.size() - 1);
+        list.remove(0);
         return list;
+    }
+
+    public static ArrayList<WeatherObject> getHourData() {
+        if (Latitude == null && LONGITUDE == null) {
+            return null;
+        }
+        if (Raw != null) {
+            return JsonConveter.getHour(Raw);
+        } else {
+            return null;
+        }
+
+
     }
 
 }

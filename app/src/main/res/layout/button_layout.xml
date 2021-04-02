@@ -5,20 +5,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
-    android:padding="16dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="16dp">
 
     <!--  i will change this to a custom layout using a TODO seclector-->
 
     <Button
         android:id="@+id/wind_button"
-        android:textSize="10dp"
+        android:textAllCaps="false"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/circle"
+        android:background="@drawable/button_set_dark"
         android:drawableTop="@drawable/ic_fan"
+        android:paddingTop="10dp"
         android:text="@string/wind_kmperh"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/humidity_buttion"
         app:layout_constraintHorizontal_bias="0.5"
@@ -26,14 +29,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:id="@+id/humidity_buttion"
-        android:textSize="10dp"
-
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/circle"
+        android:background="@drawable/button_set_dark"
         android:drawableTop="@drawable/ic_thermometer"
+        android:paddingTop="12dp"
         android:text="@string/humidity_percent"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/rain_button_mm"
         app:layout_constraintHorizontal_bias="0.5"
@@ -42,12 +48,14 @@
 
     <Button
         android:id="@+id/rain_button_mm"
-        android:textSize="10dp"
         android:layout_width="100dp"
+        android:textColor="@color/white"
         android:layout_height="100dp"
-        android:background="@drawable/circle"
+        android:background="@drawable/button_set_dark"
         android:drawableTop="@drawable/ic_drop"
+        android:paddingTop="12dp"
         android:text="@string/rain_mm"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
