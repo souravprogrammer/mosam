@@ -2,6 +2,7 @@ package com.sourav.mosam;
 
 import android.text.style.AlignmentSpan;
 
+import com.sourav.mosam.data.ApiKey;
 import com.sourav.mosam.data.WeatherObject;
 import com.sourav.mosam.networkreq.JsonConveter;
 import com.sourav.mosam.networkreq.ReadApi;
@@ -11,10 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WeatherApi {
-    private static final String API_KEY = "5b3e458de8f5c5d30b9b84f3405365a5";
     private static String city_name = "delhi";
-    private static final String CURRENT_API = "https://api.openweathermap.org/data/2.5/weather?q=NAME&appid=" + API_KEY;
-    private static final String ONE_CALL_API = "https://api.openweathermap.org/data/2.5/onecall?lat=LATI&lon=LONGI&exclude=minutely&appid=" + API_KEY;
+
+    /**TODO paste your api key here in replace of {Apikey.API_KEY}   to make your get request */
+    private static final String CURRENT_API = "https://api.openweathermap.org/data/2.5/weather?q=NAME&appid=" + ApiKey.API_KEY;
+    private static final String ONE_CALL_API = "https://api.openweathermap.org/data/2.5/onecall?lat=LATI&lon=LONGI&exclude=minutely&appid=" + ApiKey.API_KEY;
 
     private static WeatherObject currentWeather;
     private static String Latitude = null;
