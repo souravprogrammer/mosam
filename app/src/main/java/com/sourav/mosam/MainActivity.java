@@ -1,34 +1,21 @@
 package com.sourav.mosam;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.widget.NestedScrollView;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Entity;
 
-import android.app.Activity;
 import android.app.LoaderManager;
-import android.app.StatusBarManager;
-import android.content.AsyncTaskLoader;
-import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.TestLooperManager;
 import android.preference.PreferenceManager;
-import android.text.format.Time;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -39,8 +26,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,11 +33,11 @@ import com.sourav.mosam.async.MyAsyncLoader;
 import com.sourav.mosam.data.AppSettings;
 import com.sourav.mosam.data.MyTimeConveter;
 import com.sourav.mosam.data.WeatherObject;
+import com.sourav.mosam.mynotificatin.MyIntentService;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Timer;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<WeatherObject>>
         , DateRecycleViewAdapter.OnclicklistnerRecycle {
@@ -71,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 ViewModelProvider.AndroidViewModelFactory.
                         getInstance(getApplication())).get(MyViewModel.class);
 
+
+        Intent intent = new Intent(this,MyIntentService.class);
+        startService(intent);
 
         setTheam();
         setRecycleView();
