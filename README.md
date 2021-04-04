@@ -8,7 +8,7 @@ Mosam uses a OpenWeather REST API's
 
 ## screenshot
 
-<img src = "https://raw.githubusercontent.com/souravprogrammer/mosam/master/screenshort/Screenshot_1617529026.png" width = 250 height = 500/> <img src = "https://raw.githubusercontent.com/souravprogrammer/mosam/master/screenshort/Screenshot_1617529075.png" width = 250 height =  500/>
+<img src = "https://raw.githubusercontent.com/souravprogrammer/mosam/master/screenshort/Screenshot_1617529026.png" width = 250 height = 500/> <img src = "https://raw.githubusercontent.com/souravprogrammer/mosam/master/screenshort/Screenshot_1617529075.png" width = 250 height =  500/>  <img src = "https://raw.githubusercontent.com/souravprogrammer/mosam/master/screenshort/Screenshot_1617562535.png" width = 250 height = 500/>
 
 ### landscape
 <img src="https://raw.githubusercontent.com/souravprogrammer/mosam/master/screenshort/Screenshot_1617529120.png" width = 500 height  = 250 alt="25"/>
