@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private DateRecycleViewAdapter dayAdapter;
     private HourRecycleViewAdapter hourAdapter;
     private MyViewModel model = null;
-    private String headercolour, actvitycolour ;
+    private String headercolour, actvitycolour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                         getInstance(getApplication())).get(MyViewModel.class);
 
 
-        Intent intent = new Intent(this,MyIntentService.class);
+        /**Starting Service for notification*/
+        Intent intent = new Intent(this, MyIntentService.class);
         startService(intent);
 
         setTheam();
@@ -73,14 +74,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         if (item.getItemId() == R.id.settings_bar) {
             Intent intent = new Intent(this, Settings.class);
             intent.putExtra(AppSettings.header_colour, headercolour);
-            intent.putExtra(AppSettings.activity_colour,actvitycolour);
+            intent.putExtra(AppSettings.activity_colour, actvitycolour);
             startActivity(intent);
 
-            // Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show();
             return true;
         }
         return false;
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -115,8 +116,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         String light_grey = "#37474f";
-        headercolour = light_grey ;
-        actvitycolour  = grey;
+        headercolour = light_grey;
+        actvitycolour = grey;
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(light_grey)));
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -145,17 +146,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         /**TODO change this hard coded colour*/
         window.setStatusBarColor(Color.parseColor("#2196f3"));
-        headercolour = "#2196f3" ;
-        actvitycolour = "#1769aa" ;
+        headercolour = "#2196f3";
+        actvitycolour = "#1769aa";
         window.setNavigationBarColor(Color.parseColor("#1769aa"));
         Button button = findViewById(R.id.humidity_buttion);
         button.setBackground(ContextCompat.getDrawable(this, R.drawable.button_blue));
         findViewById(R.id.rain_button_mm).setBackground(ContextCompat.getDrawable(this, R.drawable.button_blue));
         findViewById(R.id.wind_button).setBackground(ContextCompat.getDrawable(this, R.drawable.button_blue));
-    }
-
-    private void loadSharedpreferenceSettings() {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
 
     private void setRecycleView() {
@@ -226,9 +223,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         button.setText(x);
         description.setText(weatherObject.getdescription());
         if (temp_unint.equals(AppSettings.KELVIN)) {
-            curr_temp.setText(WeatherObject.convertToKelvin( weatherObject.getTemp() ));
-            max_temp.setText( WeatherObject.convertToKelvin( weatherObject.get_max_temp()) );
-            min_temp.setText(WeatherObject.convertToKelvin( weatherObject.getMin_temp() ));
+            curr_temp.setText(WeatherObject.convertToKelvin(weatherObject.getTemp()));
+            max_temp.setText(WeatherObject.convertToKelvin(weatherObject.get_max_temp()));
+            min_temp.setText(WeatherObject.convertToKelvin(weatherObject.getMin_temp()));
             String tmp = getString(R.string.Realfeel) + " " + weatherObject.getReal_feel_like();
             Realfeel.setText(tmp);
         } else if (temp_unint.equals(AppSettings.FAHEENHEIT)) {
@@ -254,6 +251,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
      */
     @Override
     public void onClicked(WeatherObject weather) {
-        Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
+        // TODO onclick date item
     }
 }

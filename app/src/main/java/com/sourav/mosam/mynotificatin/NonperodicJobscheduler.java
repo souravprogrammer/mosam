@@ -25,6 +25,7 @@ public class NonperodicJobscheduler extends JobService {
                 .setPersisted(true)
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
                 .setPeriodic(TimeUnit.HOURS.toMillis(5))
+                .setBackoffCriteria(TimeUnit.MINUTES.toMillis(1),JobInfo.BACKOFF_POLICY_LINEAR)
                 .build();
         scheduler.schedule(info);
 
